@@ -22,3 +22,10 @@ Route::get('/employeeDelete/{ID}','EmployeeController@employeeDelete')->name('em
 Route::get('/employeeUpdate/{ID}','EmployeeController@employeeUpdate')->name('employeeUpdate');
 Route::post('/employeeUpdate/{ID}/employeeUpdateSubmit','EmployeeController@employeeUpdateSubmit')->name('employeeUpdateSubmit');
 //---------------------------------------------------------------------------------
+//--------------------------------Unit routes--------------------------------------
+Route::get('/unit','UnitController@unitShow')->name('unitShow');
+Route::get('/unitAdd','UnitController@unitAdd')->name('unitAdd');
+Route::post('/unitAddSubmit','UnitController@unitAddSubmit')->name('unitAddSubmit');
+Route::get('/unitDelete/{ID}','UnitController@unitDelete')->name('unitDelete');
+Route::get('/unitUpdate/{ID}','UnitController@unitUpdate')->name('unitUpdate');
+Route::post('/unitUpdate/{ID}/unitUpdateSubmit','UnitController@unitUpdateSubmit')->name('unitUpdateSubmit');

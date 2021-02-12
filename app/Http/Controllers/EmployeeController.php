@@ -49,9 +49,7 @@ class EmployeeController extends Controller
                         ->join('Posts', 'Posts.ID', '=', 'Employee.Post ')
                         ->select('Employee.ID', 'Employee.FIO', 'Posts.ID', 'Posts.Post','Employee.Salary','Employee.Address','Employee.Telephone')
                         ->where('Employee.ID','=',$ID)
-                        ->get();
-        // var_dump($employeeList);
-        // die();             
+                        ->get();       
         return view('employeeUpdate',compact('employees','posts','employeeLists'));
     }
 
