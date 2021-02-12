@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/employee','EmployeeController@employeeShow')->name('employeeShow');
+Route::get('/employeeAdd','EmployeeController@employeeAdd')->name('employeeAdd');
+Route::post('/employeeAddSubmit','EmployeeController@employeeAddSubmit')->name('employeeAddSubmit');
+Route::get('/employeeDelete/{ID}','EmployeeController@employeeDelete')->name('employeeDelete');
+Route::get('/employeeUpdate/{ID}','EmployeeController@employeeUpdate')->name('employeeUpdate');
+Route::post('/employeeUpdate/{ID}/employeeUpdateSubmit','EmployeeController@employeeUpdateSubmit')->name('employeeUpdateSubmit');
