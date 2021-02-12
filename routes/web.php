@@ -29,3 +29,11 @@ Route::post('/unitAddSubmit','UnitController@unitAddSubmit')->name('unitAddSubmi
 Route::get('/unitDelete/{ID}','UnitController@unitDelete')->name('unitDelete');
 Route::get('/unitUpdate/{ID}','UnitController@unitUpdate')->name('unitUpdate');
 Route::post('/unitUpdate/{ID}/unitUpdateSubmit','UnitController@unitUpdateSubmit')->name('unitUpdateSubmit');
+//----------------------------------------------------------------------------------
+//---------------------------------Post routes--------------------------------------
+Route::get('/post','PostController@postShow')->name('postShow');
+Route::get('/postAdd','PostController@postAdd')->name('postAdd');
+Route::post('/postAddSubmit','PostController@postAddSubmit')->name('postAddSubmit');
+Route::get('/postDelete/{ID}','PostController@postDelete')->name('postDelete');
+Route::get('/postUpdate/{ID}','PostController@postUpdate')->name('postUpdate');
+Route::post('/postUpdate/{ID}/postUpdateSubmit','PostController@postUpdateSubmit')->name('postUpdateSubmit');

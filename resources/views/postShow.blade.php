@@ -53,9 +53,9 @@
 </nav>
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col"><h1>Unit List</h1> </div>
-            <div class="col align-self-center"><a href="{{ route('unitAdd')}}">
-                <button type="submit" class="btn btn-success">New Unit</button>
+            <div class="col"><h1>Post List</h1> </div>
+            <div class="col align-self-center"><a href="{{ route('postAdd')}}">
+                <button type="submit" class="btn btn-success">New Post</button>
             </a></div>
             
             
@@ -65,19 +65,19 @@
    <table class="table">
         <thead>
             <tr>
-                <th scope="col">Name Unit</th>
+                <th scope="col">Name Post</th>
                 <th scopt="col"></th>
             </tr>
         </thead>
         <tbody>
-        @foreach($units as $unit)
+        @foreach($posts as $post)
             <tr>
-                <th scope="row">{{$unit->Unit}}</th>
+                <th scope="row">{{$post->Post}}</th>
                 <td>
-                <a href="{{route('unitUpdate', $unit->ID)}}">
+                <a href="{{route('postUpdate', $post->ID)}}">
                 <button type="submit" class="btn btn-success">Update</button>
                 </a>
-                <a href="{{route('unitDelete', $unit->ID)}}">
+                <a href="{{route('postDelete', $post->ID)}}">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </a>
                 </td>
