@@ -37,3 +37,6 @@ Route::post('/postAddSubmit','PostController@postAddSubmit')->name('postAddSubmi
 Route::get('/postDelete/{ID}','PostController@postDelete')->name('postDelete');
 Route::get('/postUpdate/{ID}','PostController@postUpdate')->name('postUpdate');
 Route::post('/postUpdate/{ID}/postUpdateSubmit','PostController@postUpdateSubmit')->name('postUpdateSubmit');
+//------------------------------------------------------------------------------------
+//---------------------------------Budget routes---------------------------------------
+Route::get('/budget','BudgetController@budgetShow')->name('budgetShow');
