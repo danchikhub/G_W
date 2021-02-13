@@ -48,3 +48,11 @@ Route::post('/productAddSubmit','ProductController@productAddSubmit')->name('pro
 Route::get('/productDelete/{ID}','ProductController@productDelete')->name('productDelete');
 Route::get('/productUpdate/{ID}','ProductController@productUpdate')->name('productUpdate');
 Route::post('/productUpdate/{ID}/productUpdateSubmit','ProductController@productUpdateSubmit')->name('productUpdateSubmit');
+//----------------------------------------------------------------------------------------
+//----------------------------------Raws routes-------------------------------------------
+Route::get('/raw','RawController@rawShow')->name('rawShow');
+Route::get('/rawAdd','RawController@rawAdd')->name('rawAdd');
+Route::post('/rawAddSubmit','RawController@rawAddSubmit')->name('rawAddSubmit');
+Route::get('/rawDelete/{ID}','RawController@rawDelete')->name('rawDelete');
+Route::get('/rawUpdate/{ID}','RawController@rawUpdate')->name('rawUpdate');
+Route::post('/rawUpdate/{ID}/rawUpdateSubmit','RawController@rawUpdateSubmit')->name('rawUpdateSubmit');
