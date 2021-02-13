@@ -56,3 +56,11 @@ Route::post('/rawAddSubmit','RawController@rawAddSubmit')->name('rawAddSubmit');
 Route::get('/rawDelete/{ID}','RawController@rawDelete')->name('rawDelete');
 Route::get('/rawUpdate/{ID}','RawController@rawUpdate')->name('rawUpdate');
 Route::post('/rawUpdate/{ID}/rawUpdateSubmit','RawController@rawUpdateSubmit')->name('rawUpdateSubmit');
+//---------------------------------------------------------------------------------------
+//----------------------------------Ingredient routes------------------------------------
+Route::get('/ingredient','IngredientController@ingredientShow')->name('ingredientShow');
+Route::get('/ingredientAdd','IngredientController@ingredientAdd')->name('ingredientAdd');
+Route::post('/ingredientAddSubmit','IngredientController@ingredientAddSubmit')->name('ingredientAddSubmit');
+Route::get('/ingredientDelete/{ID}','IngredientController@ingredientDelete')->name('ingredientDelete');
+Route::get('/ingredientUpdate/{ID}','IngredientController@ingredientUpdate')->name('ingredientUpdate');
+Route::post('/ingredientUpdate/{ID}/ingredientUpdateSubmit','IngredientController@ingredientUpdateSubmit')->name('ingredientUpdateSubmit');
