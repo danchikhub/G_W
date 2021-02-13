@@ -40,3 +40,11 @@ Route::post('/postUpdate/{ID}/postUpdateSubmit','PostController@postUpdateSubmit
 //------------------------------------------------------------------------------------
 //---------------------------------Budget routes---------------------------------------
 Route::get('/budget','BudgetController@budgetShow')->name('budgetShow');
+//--------------------------------------------------------------------------------------
+//---------------------------------Product routes---------------------------------------
+Route::get('/product','ProductController@productShow')->name('productShow');
+Route::get('/productAdd','ProductController@productAdd')->name('productAdd');
+Route::post('/productAddSubmit','ProductController@productAddSubmit')->name('productAddSubmit');
+Route::get('/productDelete/{ID}','ProductController@productDelete')->name('productDelete');
+Route::get('/productUpdate/{ID}','ProductController@productUpdate')->name('productUpdate');
+Route::post('/productUpdate/{ID}/productUpdateSubmit','ProductController@productUpdateSubmit')->name('productUpdateSubmit');
