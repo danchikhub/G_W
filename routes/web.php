@@ -64,3 +64,14 @@ Route::post('/ingredientAddSubmit','IngredientController@ingredientAddSubmit')->
 Route::get('/ingredientDelete/{ID}','IngredientController@ingredientDelete')->name('ingredientDelete');
 Route::get('/ingredientUpdate/{ID}','IngredientController@ingredientUpdate')->name('ingredientUpdate');
 Route::post('/ingredientUpdate/{ID}/ingredientUpdateSubmit','IngredientController@ingredientUpdateSubmit')->name('ingredientUpdateSubmit');
+//---------------------------------------------------------------------------------------
+//----------------------------------Purchas routes---------------------------------------
+Route::get('/purchas','PurchasController@purchasShow')->name('purchasShow');
+Route::get('/purchasAdd','PurchasController@purchasAdd')->name('purchasAdd');
+Route::post('/purchasAddSubmit','PurchasController@purchasAddSubmit')->name('purchasAddSubmit');
+Route::get('/purchasDelete/{ID}','PurchasController@purchasDelete')->name('purchasDelete');
+Route::get('/purchasUpdate/{ID}','PurchasController@purchasUpdate')->name('purchasUpdate');
+Route::post('/purchasUpdate/{ID}/purchasUpdateSubmit','PurchasController@purchasUpdateSubmit')->name('purchasUpdateSubmit');
+//---------------------------------------------------------------------------------------
+
+
