@@ -30,7 +30,7 @@
                 <label for="exampleInputEmail1" class="form-label">Post</label>
                 <select name="Raw" style="width:300px;" class="form-select" aria-label="Default select example">
                     @foreach($ingredientRaws as $ingredientRaw)
-                    <option  value="{{$ingredientProduct->ID}}" selected>--Selected {{$ingredientRaw->Raw_name}} --</option>
+                    <option  value="{{$ingredientRaw->ID}}" selected>--Selected {{$ingredientRaw->Raw_name}} --</option>
                     @endforeach
                     @foreach($raws as $raw)
                         <option value="{{$raw->ID}}">{{$raw->Raw_name}}</option>
@@ -41,7 +41,7 @@
                 <label for="exampleInputEmail1" class="form-label">Amount</label>
                 <input value="{{$ingredients->Amount}}" name="Amount" style="width:300px;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <button type="submit" class="btn btn-primary">Update employee</button>
+            <button type="submit" class="btn btn-primary">Update ingredient</button>
             <a href="{{ route('ingredientShow')}}" class="btn btn-link">Back</a>
         </form>
     </div>

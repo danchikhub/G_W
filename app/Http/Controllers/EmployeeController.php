@@ -12,7 +12,7 @@ class EmployeeController extends Controller
     {
         $employeeList=DB::table('Employee')
                         ->join('Posts', 'Posts.ID', '=', 'Employee.Post ')
-                        ->select('Employee.ID', 'Employee.FIO', 'Posts.Post','Employee.Salary','Employee.Address','Employee.Telephone')
+                        ->select('Employee.ID', 'Employee.FIO', 'Posts.Post','Employee.Salary','Employee.Address','Employee.Telephone','Employee.Bonus')
                         ->get();
         return view('employeeview')->with('employees',$employeeList);
     }
@@ -62,4 +62,19 @@ class EmployeeController extends Controller
         DB::insert('EXEC update_employee ?, ?, ?, ?, ?, ?',array($ID,$name,$post,$salary,$address,$phone,));
         return redirect()->route('employeeShow');
     }
+
+    public function findSalary(Request $request){
+            //$id=34;
+            $emp = Employee::select('Salary')->where('ID',$request->id)->first();
+            // var_dump($emp);
+            // die();
+            return response()->json($emp);
+    }
+    public function findBonus(Request $request){
+        //$id=34;
+        $empl = Employee::select('Bonus')->where('ID',$request->id)->first();
+        // var_dump($emp);
+        // die();
+        return response()->json($empl);
+}
 }

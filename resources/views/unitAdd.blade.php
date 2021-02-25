@@ -10,15 +10,15 @@
 <body>
     <div class="container">
         <h2>Unit Add</h2>
-        <form action="{{ route('postAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('unitAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ csrf_field()}}
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Name Post</label>
+                <label for="exampleInputEmail1" class="form-label">Name Unit</label>
                 <input name="name" style="width:300px;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             
-            <button type="submit" class="btn btn-primary">Add new Post</button>
+            <button type="submit" class="btn btn-primary">Add new Unit</button>
             <a href="{{ route('unitShow')}}" class="btn btn-link">Back</a>
         </form>
     </div>

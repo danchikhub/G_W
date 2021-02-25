@@ -9,20 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <h2>Purchas Add</h2>
+        <h2>Sale Add</h2>
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-        <form action="{{ route('purchasAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('saleAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ csrf_field()}}
             
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Raw</label>
-                <select name="Raw" style="width:300px;" class="form-select" aria-label="Default select example">
-                    <option selected>Please select Raw</option>
-                    @foreach($raws as $raw)
-                        <option value="{{$raw->ID}}">{{$raw->Raw_name}}</option>
+                <label for="exampleInputEmail1" class="form-label">Product</label>
+                <select name="Product" style="width:300px;" class="form-select" aria-label="Default select example">
+                    <option selected>Please select Product</option>
+                    @foreach($products as $product)
+                        <option value="{{$product->ID}}">{{$product->Product_name}}</option>
                     @endforeach
                     
                 </select>
@@ -45,7 +45,7 @@
                 <input name="Date" style="width:300px;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Raw</label>
+                <label for="exampleInputEmail1" class="form-label">Product</label>
                 <select name="Employee" style="width:300px;" class="form-select" aria-label="Default select example">
                     <option selected>Please select employee</option>
                     @foreach($employees as $employee)
@@ -54,8 +54,8 @@
                     
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Add new purchas</button>
-            <a href="{{ route('purchasShow')}}" class="btn btn-link">Back</a>
+            <button type="submit" class="btn btn-primary">Add new sale</button>
+            <a href="{{ route('saleShow')}}" class="btn btn-link">Back</a>
         </form>
     </div>
 </body>

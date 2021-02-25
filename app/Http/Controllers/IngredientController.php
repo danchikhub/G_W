@@ -44,7 +44,7 @@ class IngredientController extends Controller
     public function ingredientUpdate($ID){
         $ingredient=Ingredient::all();
         $ingredients=$ingredient->find($ID);
-        $products = Product::all();
+        $products = Raw::all();
         $raws = Raw::all();
         $ingredientProducts = DB::table('Ingredient')
                         ->join('Product', 'Product.ID', '=', 'Ingredient.Product ')

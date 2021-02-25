@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2>Product Add</h2>
-        <form action="{{ route('productAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('productAddSubmit') }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ csrf_field()}}
             <div class="mb-3">

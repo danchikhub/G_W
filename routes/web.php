@@ -49,7 +49,7 @@ Route::get('/productDelete/{ID}','ProductController@productDelete')->name('produ
 Route::get('/productUpdate/{ID}','ProductController@productUpdate')->name('productUpdate');
 Route::post('/productUpdate/{ID}/productUpdateSubmit','ProductController@productUpdateSubmit')->name('productUpdateSubmit');
 //----------------------------------------------------------------------------------------
-//----------------------------------Raws routes-------------------------------------------
+//----------------------------------Products routes-------------------------------------------
 Route::get('/raw','RawController@rawShow')->name('rawShow');
 Route::get('/rawAdd','RawController@rawAdd')->name('rawAdd');
 Route::post('/rawAddSubmit','RawController@rawAddSubmit')->name('rawAddSubmit');
@@ -73,5 +73,28 @@ Route::get('/purchasDelete/{ID}','PurchasController@purchasDelete')->name('purch
 Route::get('/purchasUpdate/{ID}','PurchasController@purchasUpdate')->name('purchasUpdate');
 Route::post('/purchasUpdate/{ID}/purchasUpdateSubmit','PurchasController@purchasUpdateSubmit')->name('purchasUpdateSubmit');
 //---------------------------------------------------------------------------------------
-
-
+//----------------------------------SalaryPayment routes---------------------------------
+Route::get('/salarypayment','SalaryPaymentController@salaryPaymentShow')->name('salaryPaymentShow');
+Route::get('/salarypaymentAdd','SalaryPaymentController@salaryPaymentAdd')->name('salaryPaymentAdd');
+Route::get('/findSalary','EmployeeController@findSalary');
+Route::get('/findBonus','EmployeeController@findBonus');
+Route::post('/salarypaymentAddSubmit','SalaryPaymentController@salaryPaymentAddSubmit')->name('salaryPaymentAddSubmit');
+Route::get('/salarypaymentUpdate/{ID}','SalaryPaymentController@salaryPaymentUpdate')->name('salaryPaymentUpdate');
+Route::post('/salarypaymentAddSubmit/{ID}/salaryPaymentUpdateSubmit','SalaryPaymentController@salaryPaymentUpdateSubmit')->name('salaryPaymentUpdateSubmit');
+Route::get('/salarypaymentDelete/{ID}','SalaryPaymentController@salaryPaymentDelete')->name('salaryPaymentDelete');
+//---------------------------------------------------------------------------------------
+//----------------------------------Production routes------------------------------------
+Route::get('/production','ProductionController@productionShow')->name('productionShow');
+Route::get('/productionAdd','ProductionController@productionAdd')->name('productionAdd');
+Route::post('/productionAddSubmit','ProductionController@productionAddSubmit')->name('productionAddSubmit');
+Route::get('/productionUpdate/{ID}','ProductionController@saleUpdate')->name('productionUpdate');
+Route::post('/productionUpdate/{ID}/productionUpdateSubmit','ProductionController@saleUpdateSubmit')->name('productionUpdateSubmit');
+Route::get('/productionDelete/{ID}','ProductionController@productionDelete')->name('productionDelete');
+//----------------------------------------------------------------------------------------
+//----------------------------------Sale routes-------------------------------------------
+Route::get('/sale','SaleController@saleShow')->name('saleShow');
+Route::get('/saleAdd','SaleController@saleAdd')->name('saleAdd');
+Route::post('/saleAddSubmit','SaleController@saleAddSubmit')->name('saleAddSubmit');
+Route::get('/saleDelete/{ID}','SaleController@saleDelete')->name('saleDelete');
+Route::get('/saleUpdate/{ID}','SaleController@saleUpdate')->name('saleUpdate');
+Route::post('/saleUpdate/{ID}/saleUpdateSubmit','SaleController@saleUpdateSubmit')->name('saleUpdateSubmit');

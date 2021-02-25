@@ -7,6 +7,8 @@ use App\Purchas;
 use App\Employee;
 use App\Raw;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException;
+use App\Budget;
 class PurchasController extends Controller
 {
     public function purchasShow(){
@@ -15,7 +17,7 @@ class PurchasController extends Controller
                         ->join('Employee', 'Employee.ID', '=', 'PurchasOfRawMaterials.Employee')
                         ->select('PurchasOfRawMaterials.ID', 'Raws.Raw_name', 'PurchasOfRawMaterials.Amount','PurchasOfRawMaterials.Sum','PurchasOfRawMaterials.Date','Employee.FIO')
                         ->get();
-        return view('purchasShow')->with('purcheses',$purchasList);
+        return view('purchasShow')->with('purchases',$purchasList);
     }
     public function purchasAdd(Request $request)
     {
@@ -29,13 +31,18 @@ class PurchasController extends Controller
 
     public function purchasAddSubmit(Request $request)
     {
+        try{
         $raw= $request['Raw'];
         $amount= $request->input('Amount');
         $sum= $request->input('Sum');
         $date= $request->input('Date');
-        $employee= ['Employee'];
+        $employee= $request['Employee'];
         DB::insert('EXEC insert_push ?, ?, ?, ?, ?',array($raw,$amount,$sum,$date,$employee));
         return redirect()->route('purchasAdd');
+        } catch(QueryException $ex) {
+            return back()->withError('Недостаточно денег в бюджете')->withInput();
+        }
+        
     }
 
     public function purchasDelete($ID){
@@ -61,12 +68,25 @@ class PurchasController extends Controller
         return view('purchasUpdate',compact('purchas','purchases','employees','raws','purchasRaws','purchasEmployees'));
     }
     public function purchasUpdateSubmit($ID,Request $request){
+        $bud=Budget::all();
+        $budget=$bud->find(1);
+        $budgetSum=(float) $budget->Sum;
+        try{
         $raw= $request['Raw'];
-        $sum= $request->input('Sum');
-        $amount= $request->input('Amount');
+        $sum= (float) $request->input('Sum');
+        $amount= (float) $request->input('Amount');
+        $total=$sum*$amount;
+        if($total > $budgetSum){
+            return back()->withError('Недостаточно денег в бюджете')->withInput();
+        }else{
+        
+        
         $date= $request->input('Date');
         $employee=$request['Employee'];
         DB::insert('EXEC update_push ?, ?, ?, ?, ?, ?',array($ID,$raw,$amount,$sum,$date,$employee,));
-        return redirect()->route('purchasShow');
+        return redirect()->route('purchasShow');}
+    } catch(QueryException $ex) {
+        return back()->withError('Недостаточно денег в бюджете')->withInput();
+    }
     }
 }

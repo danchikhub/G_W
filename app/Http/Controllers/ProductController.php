@@ -29,7 +29,7 @@ class ProductController extends Controller
         $unit= $request['Unit'];
         $sum= $request->input('Sum');
         $amount= $request->input('Amount');
-        DB::insert('EXEC insert_product ?, ?, ?, ? ',array($name,$unit,$sum,$amount));
+        DB::insert('EXEC insert_product ?, ?, ?, ?',array($name,$unit,$sum,$amount));
         return redirect()->route('productAdd');
     }
 
