@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PurchasUpdate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
 </head>
 <body>
-<div class="container">
+<div class="hei">
         <h2>Purchas Update</h2>
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
@@ -16,8 +17,8 @@
         <form action="{{ route('purchasUpdateSubmit',$purchases->ID) }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ csrf_field()}}
-            
-            
+
+
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Raw</label>
                 <select name="Raw" style="width:300px;" class="form-select" aria-label="Default select example">
@@ -54,9 +55,9 @@
                     @endforeach
                 </select>
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Update purchas</button>
-            <a href="{{ route('purchasShow')}}" class="btn btn-link">Back</a>
+            <a type="button" href="{{ route('purchasShow')}}" class="btn btn-primary">Back</a>
         </form>
     </div>
 </body>

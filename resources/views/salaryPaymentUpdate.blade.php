@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SalaryUpdate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>SalaryPayment Update</h2>
+    <div class="hei">
+        <h2>Salary Payment Update</h2>
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
@@ -20,12 +21,12 @@
                 <label for="exampleInputEmail1" class="form-label">Salary</label>
                 <select name="Employee" style="width:300px;" class="employee form-select" aria-label="Default select example">
                     @foreach($employeeLists as $employeeList)
-                    <option value="{{$employeeList->ID}}" selected>{{$employeeList->FIO}}</option>
+                    <option value="{{$employeeList->ID}}" disabled selected>Selected {{$employeeList->FIO}}</option>
                     @endforeach
                     @foreach($employees as $employee)
                         <option value="{{$employee->ID}}">{{$employee->FIO}}</option>
                     @endforeach
-                    
+
                 </select>
             </div>
 
@@ -41,12 +42,12 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Date</label>
-                <input value="{{$salaries->Date}}" name="Date" style="width:300px;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input value="{{$salaries->Date}}" name="Date" style="width:300px;" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            
-            
+
+
             <button type="submit" class="btn btn-primary">Update Salary</button>
-            <a href="{{ route('salaryPaymentShow')}}" class="btn btn-link">Back</a>
+            <a type="button" href="{{ route('salaryPaymentShow')}}" class="btn btn-primary">Back</a>
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IngredientAdd</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="hei">
         <h2>Ingredient Add</h2>
         <form action="{{ route('ingredientAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -20,7 +21,7 @@
                     @foreach($products as $product)
                         <option value="{{$product->ID}}">{{$product->Product_name}}</option>
                     @endforeach
-                    
+
                 </select>
             </div>
             <div class="mb-3">
@@ -30,7 +31,7 @@
                     @foreach($raws as $raw)
                         <option value="{{$raw->ID}}">{{$raw->Raw_name}}</option>
                     @endforeach
-                    
+
                 </select>
             </div>
 
@@ -39,7 +40,7 @@
                 <input name="Amount" style="width:300px;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <button type="submit" class="btn btn-primary">Add new ingredient</button>
-            <a href="{{ route('ingredientShow')}}" class="btn btn-link">Back</a>
+            <a type="button" href="{{ route('ingredientShow')}}" class="btn btn-primary">Back</a>
         </form>
     </div>
 </body>

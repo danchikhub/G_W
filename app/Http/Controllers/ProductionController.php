@@ -44,12 +44,12 @@ class ProductionController extends Controller
                         ->join('Product', 'Product.ID', '=', 'Production.Product')
                         ->select('Production.ID','Product.ID', 'Product_name')
                         ->where('Production.ID','=',$ID)
-                        ->get(); 
+                        ->get();
         $productionEmployees = DB::table('Production')
                         ->join('Employee', 'Employee.ID', '=', 'Production.Employee')
                         ->select('Production.ID','Employee.ID', 'Employee.FIO')
                         ->where('Production.ID','=',$ID)
-                        ->get();   
+                        ->get();
         return view('productionUpdate',compact('production','productions','employees','products','productionProducts','productionEmployees'));
     }
     public function saleUpdateSubmit($ID,Request $request){

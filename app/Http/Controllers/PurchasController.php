@@ -42,7 +42,7 @@ class PurchasController extends Controller
         } catch(QueryException $ex) {
             return back()->withError('Недостаточно денег в бюджете')->withInput();
         }
-        
+
     }
 
     public function purchasDelete($ID){
@@ -59,12 +59,12 @@ class PurchasController extends Controller
                         ->join('Raws', 'Raws.ID', '=', 'PurchasOfRawMaterials.Raw')
                         ->select('PurchasOfRawMaterials.ID','Raws.ID', 'Raws.Raw_name')
                         ->where('PurchasOfRawMaterials.ID','=',$ID)
-                        ->get(); 
+                        ->get();
         $purchasEmployees = DB::table('PurchasOfRawMaterials')
                         ->join('Employee', 'Employee.ID', '=', 'PurchasOfRawMaterials.Employee')
                         ->select('PurchasOfRawMaterials.ID','Employee.ID', 'Employee.FIO')
                         ->where('PurchasOfRawMaterials.ID','=',$ID)
-                        ->get();   
+                        ->get();
         return view('purchasUpdate',compact('purchas','purchases','employees','raws','purchasRaws','purchasEmployees'));
     }
     public function purchasUpdateSubmit($ID,Request $request){
@@ -79,8 +79,8 @@ class PurchasController extends Controller
         if($total > $budgetSum){
             return back()->withError('Недостаточно денег в бюджете')->withInput();
         }else{
-        
-        
+
+
         $date= $request->input('Date');
         $employee=$request['Employee'];
         DB::insert('EXEC update_push ?, ?, ?, ?, ?, ?',array($ID,$raw,$amount,$sum,$date,$employee,));

@@ -41,7 +41,7 @@
                 <a class="nav-link" href="{{route('salaryPaymentShow')}}">Salary</a>
             </li>
             </ul>
-            
+
         </div>
     </div>
 </nav>

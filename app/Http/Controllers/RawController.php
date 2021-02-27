@@ -45,7 +45,7 @@ class RawController extends Controller
         $rawLists=DB::table('Raws')
                             ->join('Units', 'Units.ID', '=', 'Raws.Unit ')
                             ->select('Raws.ID', 'Raws.Raw_name', 'Units.ID', 'Units.Unit','Raws.Sum','Raws.Amount','Raws.RawCostPrice')
-                            ->get();   
+                            ->get();
         return view('rawUpdate',compact('raws','units','rawLists'));
     }
 
