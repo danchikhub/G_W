@@ -66,9 +66,9 @@ class EmployeeController extends Controller
     public function findSalary(Request $request){
             //$id=34;
             $emp = Employee::select('Salary')->where('ID',$request->id)->first();
-            // var_dump($emp);
-            // die();
-            return response()->json($emp);
+            var_dump($emp);
+             die();
+            //return response()->json($emp);
     }
     public function findBonus(Request $request){
         //$id=34;

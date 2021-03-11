@@ -40,6 +40,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('salaryPaymentShow')}}">Salary</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('expensesShow')}}">Expenses</a>
+            </li>
             </ul>
             
         </div>
