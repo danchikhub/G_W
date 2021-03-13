@@ -37,9 +37,9 @@ class SaleController extends Controller
                 $date= $request->input('Date');
                 $employee= $request['Employee'];
                 DB::insert('EXEC insert_sale ?, ?, ?, ?, ?', array($product,$sum,$amount,$date,$employee));
-                return redirect()->route('saleAdd');
+                return redirect()->route('alertShow')->with('success','Успешно продано')->withInput();
                  } catch(QueryException $ex) {
-                return back()->withError('Не достаточно продуктов для продажи')->withInput();
+                return redirect()->route('alertShow')->withError('Не достаточно продуктов для продажи')->withInput();
                 }
     }
 

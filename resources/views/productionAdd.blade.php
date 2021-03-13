@@ -6,23 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProductionAdd</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
 </head>
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
-        .hei {
-            margin-left: 10%;
-            margin-top: 6%;
-            font-family: 'Poppins', sans-serif;
-        }
-        button {
-            margin-right: 15px;
-        }
-
-        body{
-            background-image: url('../blue.JPG');
-        }
-    </style>
     <div class="hei">
         <h2>Production Add</h2>
         <form action="{{ route('productionAddSubmit' ) }}" method="POST" enctype="multipart/form-data">

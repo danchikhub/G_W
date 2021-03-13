@@ -18,11 +18,14 @@
    button#posit{
      margin-left: 5px;
    }
+   button#btn-class{
+    margin-bottom: 50px;
+   }
 </style>
 @include('include.header')
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col"><h1>Purchas List</h1> </div>
+            <div class="col"><h1>Purchase List</h1> </div>
         </div>
 
         <div class="table-responsive">
@@ -46,7 +49,7 @@
                 <td>{{$purchas->Date}}</td>
                 <td>{{$purchas->FIO}}</td>
                 <td>
-                <a href="{{route('purchasUpdate', $purchas->ID)}}">
+                <a type="button" href="{{route('purchasUpdate', $purchas->ID)}}">
                 <button type="submit" class="btn btn-primary">Update</button>
                 </a>
                 <a href="{{route('purchasDelete', $purchas->ID)}}">
@@ -60,7 +63,7 @@
    </table>
    </div>
    <div class="col align-self-center"><a href="{{ route('purchasAdd')}}">
-                <button type="submit" class="btn btn-primary">New Purchas</button>
+                <button id="btn-class" type="submit" class="btn btn-primary">New Purchase</button>
             </a></div>
     </div>
 </body>

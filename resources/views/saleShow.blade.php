@@ -46,7 +46,7 @@
                 <td>{{$sale->Date}}</td>
                 <td>{{$sale->FIO}}</td>
                 <td>
-                <a href="{{route('saleUpdate', $sale->ID)}}">
+                <a type="button" href="{{route('saleUpdate', $sale->ID)}}">
                 <button type="submit" class="btn btn-primary">Update</button>
                 </a>
                 <a href="{{route('saleDelete', $sale->ID)}}">

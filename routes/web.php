@@ -98,3 +98,14 @@ Route::post('/saleAddSubmit','SaleController@saleAddSubmit')->name('saleAddSubmi
 Route::get('/saleDelete/{ID}','SaleController@saleDelete')->name('saleDelete');
 Route::get('/saleUpdate/{ID}','SaleController@saleUpdate')->name('saleUpdate');
 Route::post('/saleUpdate/{ID}/saleUpdateSubmit','SaleController@saleUpdateSubmit')->name('saleUpdateSubmit');
+//----------------------------------------------------------------------------------------
+//---------------------------------- Alert -------------------------------------------
+Route::get('/alert','AlertController@AlertShow')->name('alertShow');
+//----------------------------------- Expence -------------------------------------------
+Route::get('/expense','CostAccountingController@costAccountingShow')->name('expensesShow');
+Route::get('/expenseAdd','CostAccountingController@costAccountingAdd')->name('expensesAdd');
+Route::post('/expenseAddSubmit','CostAccountingController@costAccountingAddSubmit')->name('expenseAddSubmit');
+Route::get('/expenseDelete/{ID}','CostAccountingController@costAccountingDelete')->name('expensesDelete');
+Route::get('/expenseUpdate/{ID}','CostAccountingController@costAccountingUpdate')->name('expensesUpdate');
+Route::post('/expenseUpdate/{ID}/expenseUpdateSubmit','CostAccountingController@costAccountingUpdateSubmit')->name('expensesUpdateSubmit');
+Route::get('/findSum','CostAccountingController@findSum');

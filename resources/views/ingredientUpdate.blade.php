@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmployeeUpdate</title>
+    <title>IngredientUpdate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="..\css\styles.css">
 </head>
 <body>
 <div class="hei">
-        <h2>Employee Update</h2>
+        <h2>Ingredient Update</h2>
         <form action="{{ route('ingredientUpdateSubmit',$ingredients->ID) }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ csrf_field()}}
 
 
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Post</label>
+                <label for="exampleInputEmail1" class="form-label">Product</label>
                 <select name="Product" style="width:300px;" class="form-select" aria-label="Default select example">
                     @foreach($ingredientProducts as $ingredientProduct)
                     <option  value="{{$ingredientProduct->ID}}" selected>--Selected {{$ingredientProduct->Product_name}} --</option>
@@ -28,7 +28,7 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Post</label>
+                <label for="exampleInputEmail1" class="form-label">Ingredient</label>
                 <select name="Raw" style="width:300px;" class="form-select" aria-label="Default select example">
                     @foreach($ingredientRaws as $ingredientRaw)
                     <option  value="{{$ingredientRaw->ID}}" selected>--Selected {{$ingredientRaw->Raw_name}} --</option>

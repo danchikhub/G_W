@@ -7,6 +7,7 @@ use App\Product;
 use App\Employee;
 use App\Production;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException;
 class ProductionController extends Controller
 {
     public function productionShow(){
@@ -28,12 +29,17 @@ class ProductionController extends Controller
     }
     public function productionAddSubmit(Request $request)
     {
-        $product= $request['Product'];
-        $amount= $request->input('Amount');
-        $date= $request->input('Date');
-        $employee= $request['Employee'];
-        DB::insert('EXEC insert_production ?, ?, ?, ?', array($product,$amount,$date,$employee));
-        return redirect()->route('productionAdd');
+        try{
+          $product= $request['Product'];
+          $amount= $request->input('Amount');
+          $date= $request->input('Date');
+          $employee= $request['Employee'];
+          DB::insert('EXEC insert_production ?, ?, ?, ?', array($product,$amount,$date,$employee));
+          return redirect()->route('alertShow')->with('success','Успешно произведено')->withInput();
+        }
+        catch(QueryException $ex){
+            return redirect()->route('alertShow')->withError('Не достаточно ингредиентов для производства')->withInput();
+        }
     }
     public function saleUpdate($ID){
         $production=Production::all();

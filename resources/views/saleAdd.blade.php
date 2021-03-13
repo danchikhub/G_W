@@ -11,9 +11,6 @@
 <body>
     <div class="hei">
         <h2>Sale Add</h2>
-        @if (session('error'))
-            <div id="alert" class="alert alert-danger">{{ session('error') }}</div>
-        @endif
         <form action="{{ route('saleAddSubmit' ) }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ csrf_field()}}

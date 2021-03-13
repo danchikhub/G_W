@@ -5,6 +5,7 @@
     margin-top: 4%;
     margin-bottom: 40px;
     font-family: 'Poppins', sans-serif;
+    width: 300px;
 }
 button {
     margin-right: 15px;
@@ -14,11 +15,4 @@ body{
     background-image: url('../blue.JPG');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-div#alert{
-	width: 300px;
-	margin-top: 25px;
-	margin-right: 170px;
-	float: right;
 }
